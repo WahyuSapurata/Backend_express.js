@@ -1,0 +1,65 @@
+
+# Users
+
+
+###
+
+GET http://localhost:5000/users/6397f2c857fe143416ed2061
+
+###
+POST http://localhost:5000/users
+Content-Type: application/json
+
+{
+    "name": "wahyu",
+    "email": "wahyu@gmail.com",
+    "gender": "Male"
+} 
+
+###
+
+PUT  http://localhost:5000/users/6397f2c857fe143416ed2061
+Content-Type: application/json
+
+{
+    "name": "saleh",
+    "email": "saleh@gmail.com",
+    "gender": "Male"
+} 
+
+###
+
+DELETE http://localhost:5000/users/6397f2c857fe143416ed2061
+
+###
+# Admin
+GET http://localhost:5000/admins
+# Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJhZG1pbklkIjoiNjM5ZThlZGJjZmM0MTVhYzQ5OTBiMzQyIiwibmFtZSI6Im5hbmEiLCJlbWFpbCI6Im5hbmFAZ21haWwuY29tIiwiaWF0IjoxNjcxNDIwODI4LCJleHAiOjE2NzE0MjA4NDh9.FYt2B5yUgvtLkvfAn3n138QlsZuSvbx70W_LXs5O4bo
+###
+
+GET http://localhost:5000/token
+
+###
+POST http://localhost:5000/admins
+Content-Type: application/json
+
+{
+    "name": "nana",
+    "email": "nana@gmail.com",
+    "password": "1234567",
+    "confPassword": "1234567"
+}
+
+###
+POST http://localhost:5000/login
+Content-Type: application/json
+ 
+ {
+    "email": "nana@gmail.com",
+    "password": "1234567"
+ }
+
+###
+DELETE http://localhost:5000/logout
+
+
