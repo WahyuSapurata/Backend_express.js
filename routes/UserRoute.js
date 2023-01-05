@@ -1,4 +1,5 @@
 import express from "express";
+import { runValidation, saveValidation } from "../validation/index.js";
 import {
   getUsers,
   getUserById,
@@ -11,7 +12,7 @@ const router = express.Router();
 
 router.get("/users", verifyToken, getUsers);
 router.get("/users/:id", verifyToken, getUserById);
-router.post("/users", verifyToken, saveUser);
+router.post("/users", verifyToken, saveValidation, runValidation, saveUser);
 router.put("/users/:id", verifyToken, updateUser);
 router.delete("/users/:id", verifyToken, deleteUser);
 

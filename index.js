@@ -21,4 +21,6 @@ app.use(cors({ credentials: true, origin: "http://localhost:3000" }));
 app.use(express.json());
 app.use(UserRoute, AdminRoute);
 
-app.listen(5000, () => console.log("server up and running..."));
+app.listen(process.env.PORT, () =>
+  console.log("server up and running port", process.env.PORT)
+);

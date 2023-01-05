@@ -68,6 +68,15 @@ export const login = async (req, res) => {
   }
 };
 
+export const deleteAdmin = async (req, res) => {
+  try {
+    const deleteadmin = await Admin.deleteOne({ _id: req.params.id });
+    res.status(200).json(deleteadmin);
+  } catch (error) {
+    res.status(400).json({ message: error.message });
+  }
+};
+
 export const logout = async (req, res) => {
   const authHeader = req.headers["authorization"];
   const token = authHeader && authHeader.split(" ")[1];

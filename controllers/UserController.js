@@ -24,7 +24,8 @@ export const saveUser = async (req, res) => {
     const inserteduser = await user.save();
     res.status(201).json(inserteduser);
   } catch (error) {
-    res.status(400).json({ message: error.message });
+    console.log(error);
+    res.status(422).json(error.errors);
   }
 };
 

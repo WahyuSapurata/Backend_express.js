@@ -14,7 +14,7 @@ Content-Type: application/json
     "name": "wahyu",
     "email": "wahyu@gmail.com",
     "gender": "Male"
-} 
+}
 
 ###
 

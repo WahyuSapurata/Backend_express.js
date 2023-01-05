@@ -3,6 +3,7 @@ import {
   getAdmin,
   registerAdmin,
   login,
+  deleteAdmin,
   logout,
 } from "../controllers/AdminController.js";
 import { verifyToken } from "../middleware/VerifyToken.js";
@@ -14,6 +15,7 @@ router.get("/admins", verifyToken, getAdmin);
 router.post("/admins", registerAdmin);
 router.post("/login", login);
 router.get("/token", refreshToken);
+router.delete("/deleteAdmin/:id", verifyToken, deleteAdmin);
 router.delete("/logout", logout);
 // router.put("/users/:id", updateUser);
 // router.delete("/users/:id", deleteUser);
