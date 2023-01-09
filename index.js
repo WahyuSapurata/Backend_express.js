@@ -2,6 +2,7 @@ import express from "express";
 import dotenv from "dotenv";
 import mongoose from "mongoose";
 import cors from "cors";
+import fileUpload from "express-fileupload";
 import UserRoute from "./routes/UserRoute.js";
 import AdminRoute from "./routes/AdminRoute.js";
 
@@ -19,6 +20,8 @@ db.once("open", () => console.log("Database Connected..."));
 
 app.use(cors({ credentials: true, origin: "http://localhost:3000" }));
 app.use(express.json());
+app.use(fileUpload());
+app.use(express.static("public"));
 app.use(UserRoute, AdminRoute);
 
 app.listen(process.env.PORT, () =>

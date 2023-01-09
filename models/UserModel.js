@@ -13,6 +13,12 @@ const User = mongoose.Schema({
     type: String,
     required: true,
   },
+  image: {
+    type: String,
+  },
+  url: {
+    type: String,
+  },
 });
 
 export default mongoose.model("Users", User);
